@@ -1,0 +1,36 @@
+{
+	"name": "flask mvc",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "web",
+	"workspaceFolder": "/workspace",
+	"forwardPorts": [
+		8080,
+		9000
+	],
+	// "mounts": [
+	// 	{
+	// 		"type": "volume",
+	// 		"target": "${containerWorkspaceFolder}/.venv"
+	// 	}
+	// ],
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"python.linting.pylintEnabled": false,
+				"python.formatting.provider": "black",
+				"python.analysis.extraPaths": [
+					"/workspace/app"
+				]
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance"
+			]
+		}
+	}
+}
