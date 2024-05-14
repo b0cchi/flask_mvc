@@ -1,8 +1,12 @@
 
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__, static_folder='.', static_url_path='')
+
 @app.route('/')
 def index():
-    return app.send_static_file('template/index.html')
+    title = 'hello!!'
+    return render_template('index.html',title = title)
 
-app.run(port=8000, debug=True)
+if __name__ == '__main__':
+    app.run(port=8000, debug=True)
